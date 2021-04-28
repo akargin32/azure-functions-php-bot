@@ -6,7 +6,7 @@
   $client_secret = getenv('MicrosoftAppPassword');
 
   //Устанавливаем URL, к которому будем обращаться за токеном авторизации
-  $authRequestUrl = 'https://login.microsoftonline.com/common/oauth2/v2.0/token';
+  $authRequestUrl = 'https://login.microsoftonline.com/botframework.com/oauth2/v2.0/token';
   
   //Читаем тело POST-запроса с сообщением от пользователя и десериализуем JSON в массив $deserializedRequestActivity
   //В этом примере я получаю тело запроса из переменной окружения req, что преднастроено в биндингах Azure Functions
@@ -30,7 +30,7 @@
                     'grant_type' => 'client_credentials',
                     'client_id' => $client_id, //ID приложения
                     'client_secret' => $client_secret, //Пароль приложения
-                    'scope' => 'https://graph.microsoft.com/.default'
+                    'scope' => 'https://api.botframework.com/.default'
                 )
             )
         )
